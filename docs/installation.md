@@ -19,19 +19,19 @@ Install with the package manager already used by the project.
 ### pnpm
 
 ```sh
-pnpm add @ehven/lanes@0.1.0
+pnpm add @ehven/lanes
 ```
 
 ### npm
 
 ```sh
-npm install @ehven/lanes@0.1.0
+npm install @ehven/lanes
 ```
 
 ### Yarn
 
 ```sh
-yarn add @ehven/lanes@0.1.0
+yarn add @ehven/lanes
 ```
 
 Import the readable stylesheet:
@@ -65,7 +65,7 @@ This lets each project retain control of its cascade architecture.
 Install the package:
 
 ```sh
-pnpm add @ehven/lanes@0.1.0
+pnpm add @ehven/lanes
 ```
 
 Import it from a global project stylesheet:
@@ -126,7 +126,7 @@ The class can then be used in Astro components, MDX components, or supported HTM
 Install the package in the theme or plugin project:
 
 ```sh
-pnpm add @ehven/lanes@0.1.0
+pnpm add @ehven/lanes
 ```
 
 Import it through the project's primary CSS entry point:
@@ -159,7 +159,7 @@ add_action(
                 '/assets/vendor/ehven-lanes/lanes.min.css'
             ),
             array(),
-            '0.1.0'
+            '0.1.1'
         );
     }
 );
@@ -183,7 +183,7 @@ Alternatively, use the version-pinned npm CDN URL:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@ehven/lanes@0.1.0/dist/lanes.min.css"
+  href="https://cdn.jsdelivr.net/npm/@ehven/lanes@0.1.1/dist/lanes.min.css"
 />
 ```
 
@@ -194,7 +194,7 @@ Add the version-pinned stylesheet link to the project's site-wide `<head>` custo
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@ehven/lanes@0.1.0/dist/lanes.min.css"
+  href="https://cdn.jsdelivr.net/npm/@ehven/lanes@0.1.1/dist/lanes.min.css"
 />
 ```
 
