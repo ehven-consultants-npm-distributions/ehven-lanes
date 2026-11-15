@@ -1,18 +1,22 @@
 {
   "name": "@ehven/lanes",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
-  "npmIntegrity": "sha512-OJ9I/o4ydPiZdKw4yo9g99KT9Lfq1K7Gor7i0x12iT5cZ8LQ78GiBSObVcMYSXuKJctZ3I4XNIRS7C+w3k7EMg==",
+  "npmIntegrity": "sha512-nmWBGG/3/mn5iYuVQcrQpWXU1+mWZBR/Q3m+b8FkB+CorjmjX2mF58tFGhdzFVfCPz4zDWIN01inNTsEOzGrWA==",
+  "funding": {
+    "type": "custom",
+    "url": "https://ehven.com/contact/"
+  },
   "files": [
     {
       "path": "dist/lanes.css",
-      "bytes": 1173,
-      "sha256": "122317dcae446f85fdb9018d5c33a9ea27335b1f094e08c159d59afc892a1d3e"
+      "bytes": 2205,
+      "sha256": "a03a5ed5f13d2993156a3046ef917dcf1a7f1056819b3504e8b09fb213381583"
     },
     {
       "path": "dist/lanes.min.css",
-      "bytes": 623,
-      "sha256": "b1a8c6b864c1754b272073b4e4b62be42f7c505c106cbace5411a84b16349700"
+      "bytes": 1297,
+      "sha256": "142006d0c80aca713ecad8855d216c190954206ff2934a97e0abdf9655a09b15"
     }
   ]
 }

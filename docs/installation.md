@@ -19,19 +19,19 @@ Install with the package manager already used by the project.
 ### pnpm
 
 ```sh
-pnpm add @ehven/lanes@0.1.0
+pnpm add @ehven/lanes
 ```
 
 ### npm
 
 ```sh
-npm install @ehven/lanes@0.1.0
+npm install @ehven/lanes
 ```
 
 ### Yarn
 
 ```sh
-yarn add @ehven/lanes@0.1.0
+yarn add @ehven/lanes
 ```
 
 Import the readable stylesheet:
@@ -65,7 +65,7 @@ This lets each project retain control of its cascade architecture.
 Install the package:
 
 ```sh
-pnpm add @ehven/lanes@0.1.0
+pnpm add @ehven/lanes
 ```
 
 Import it from a global project stylesheet:
@@ -126,7 +126,7 @@ The class can then be used in Astro components, MDX components, or supported HTM
 Install the package in the theme or plugin project:
 
 ```sh
-pnpm add @ehven/lanes@0.1.0
+pnpm add @ehven/lanes
 ```
 
 Import it through the project's primary CSS entry point:
@@ -159,7 +159,7 @@ add_action(
                 '/assets/vendor/ehven-lanes/lanes.min.css'
             ),
             array(),
-            '0.1.0'
+            '1.0.0'
         );
     }
 );
@@ -183,7 +183,7 @@ Alternatively, use the version-pinned npm CDN URL:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@ehven/lanes@0.1.0/dist/lanes.min.css"
+  href="https://cdn.jsdelivr.net/npm/@ehven/lanes@1.0.0/dist/lanes.min.css"
 />
 ```
 
@@ -194,7 +194,7 @@ Add the version-pinned stylesheet link to the project's site-wide `<head>` custo
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@ehven/lanes@0.1.0/dist/lanes.min.css"
+  href="https://cdn.jsdelivr.net/npm/@ehven/lanes@1.0.0/dist/lanes.min.css"
 />
 ```
 
@@ -203,6 +203,8 @@ Add `ehven-lanes` to the Webflow element that wraps the peer items.
 For stronger delivery-chain control, replace the CDN URL with an owned public asset endpoint after that service is provisioned.
 
 ## Configuration
+
+Keep consumer overrides in `config/packages/npm/lanes/index.css`, imported after the package through the existing pipeline. Preserve existing filenames until a deliberate migration; never edit `node_modules`.
 
 Set package custom properties on the lanes container or any ancestor:
 
@@ -239,4 +241,16 @@ ul.ehven-lanes {
 
 The package uses the direct children's block-end margin to create vertical separation in the Multi-column fallback. Native Grid Lanes replaces that margin with `gap`.
 
+Ordered modes use `gap` and remove that item margin. Supply valid nonnegative lengths; invalid settings follow CSS invalid-value handling.
+
 Treat each direct child as the layout item. If content needs independent outer margins, place that content inside a direct-child wrapper.
+
+## Ordering
+
+Add `data-ehven-lanes-order="horizontal"` to cycle consecutive single-lane items across columns in browsers supporting native Grid Lanes and infinite tolerance. Each subsequent item in a column starts below its own predecessor, preserving unequal heights. Unsupported browsers render aligned horizontal Grid rows, with each row below its tallest predecessor. Use `data-ehven-lanes-order="rows"` for aligned rows consistently. Omit the attribute to preserve the original fallback/enhancement behavior.
+
+Keep direct children in meaningful source order and avoid explicit column placement, spanning and `order` overrides in ordered modes. Resizing or hiding/appending items recalculates placement using visible items and the current column count. Reserve image dimensions or aspect ratios when possible to reduce shifting as media loads. Layout only controls card boxes; the consumer remains responsible for long-text wrapping and overflowing inner content.
+
+The existing `--ehven-lanes-flow-tolerance` hook controls native placement only in the original mode. Horizontal mode uses infinite native tolerance deliberately, and rows mode has no masonry tolerance. The package maps the existing hook to both old and new browser property names.
+
+UI can change the attribute without reordering/measuring cards. Test focus and comprehension; do not add positive tabindex. No switch UI or JavaScript polyfill ships.
