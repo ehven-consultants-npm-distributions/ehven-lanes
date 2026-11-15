@@ -2,12 +2,7 @@
 
 ## Supported versions
 
-Until the package reaches version 1.0.0, security fixes are applied to the latest published minor version.
-
-| Version | Supported |
-|---|---|
-| Latest `0.x` minor | Yes |
-| Older `0.x` minors | No |
+Security fixes target the latest minor of the current major. Upgrade older minors to receive fixes. Older majors and prereleases are unsupported unless an explicit support agreement states otherwise. No response-time guarantee is offered.
 
 ## Reporting a vulnerability
 
